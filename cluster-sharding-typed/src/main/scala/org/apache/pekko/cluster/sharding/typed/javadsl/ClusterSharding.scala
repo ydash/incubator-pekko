@@ -85,7 +85,7 @@ object ClusterSharding {
  * in the cluster, registering the supported entity types with the [[ClusterSharding#init]]
  * method, which returns the `ShardRegion` actor reference for a named entity type.
  * Messages to the entities are always sent via that `ActorRef`, i.e. the local `ShardRegion`.
- * Messages can also be sent via the [[EntityRef]] retrieved with [[ClusterSharding#entityRefFor]],
+ * Messages can also be sent via the [[EntityRef]] retrieved with [[ClusterSharding#entityRefFor[M](typeKey:org\.apache\.pekko\.cluster\.sharding\.typed\.javadsl\.EntityTypeKey[M],entityId:String,dataCenter:String)* ClusterSharding#entityRefFor]],
  * which will also send via the local `ShardRegion`.
  *
  * Some settings can be configured as described in the `pekko.cluster.sharding`
@@ -489,7 +489,7 @@ object EntityTypeKey {
   /**
    * The same as [[ask]] but only for requests that result in a response of type [[pekko.pattern.StatusReply]].
    * If the response is a [[pekko.pattern.StatusReply#success]] the returned future is completed successfully with the wrapped response.
-   * If the status response is a [[pekko.pattern.StatusReply#error]] the returned future will be failed with the
+   * If the status response is a [[pekko.pattern.StatusReply#error[T](exception:Throwable)* pekko.pattern.StatusReply#error]] the returned future will be failed with the
    * exception in the error (normally a [[pekko.pattern.StatusReply.ErrorMessage]]).
    */
   def askWithStatus[Res](f: ActorRef[StatusReply[Res]] => M, timeout: Duration): CompletionStage[Res]

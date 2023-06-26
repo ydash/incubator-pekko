@@ -44,7 +44,9 @@ object Behaviors {
 
   /**
    * `setup` is a factory for a behavior. Creation of the behavior instance is deferred until
-   * the actor is started, as opposed to [[Behaviors#receive]] that creates the behavior instance
+   * the actor is started, as opposed to
+   * [[[[Behaviors#receive[T](onMessage:org\.apache\.pekko\.japi\.function\.Function2[org\.apache\.pekko\.actor\.typed\.javadsl\.ActorContext[T],T,org\.apache\.pekko\.actor\.typed\.Behavior[T]],onSignal:org\.apache\.pekko\.japi\.function\.Function2[org\.apache\.pekko\.actor\.typed\.javadsl\.ActorContext[T],org\.apache\.pekko\.actor\.typed\.Signal,org\.apache\.pekko\.actor\.typed\.Behavior[T]])* Behaviors#receive]]]]
+   * that creates the behavior instance
    * immediately before the actor is running. The `factory` function pass the `ActorContext`
    * as parameter and that can for example be used for spawning child actors.
    *
@@ -131,7 +133,9 @@ object Behaviors {
     new BehaviorImpl.ReceiveBehavior((ctx, msg) => onMessage.apply(ctx.asJava, msg))
 
   /**
-   * Simplified version of [[receive]] with only a single argument - the message
+   * Simplified version of
+   * [[[[receive[T](onMessage:org\.apache\.pekko\.japi\.function\.Function2[org\.apache\.pekko\.actor\.typed\.javadsl\.ActorContext[T],T,org\.apache\.pekko\.actor\.typed\.Behavior[T]])* receive]]]]
+   * with only a single argument - the message
    * to be handled. Useful for when the context is already accessible by other means,
    * like being wrapped in an [[setup]] or similar.
    *

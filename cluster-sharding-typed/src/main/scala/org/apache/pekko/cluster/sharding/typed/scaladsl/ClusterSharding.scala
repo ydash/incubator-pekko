@@ -84,7 +84,7 @@ object ClusterSharding extends ExtensionId[ClusterSharding] {
  * in the cluster, registering the supported entity types with the [[ClusterSharding#init]]
  * method, which returns the `ShardRegion` actor reference for a named entity type.
  * Messages to the entities are always sent via that `ActorRef`, i.e. the local `ShardRegion`.
- * Messages can also be sent via the [[EntityRef]] retrieved with [[ClusterSharding#entityRefFor]],
+ * Messages can also be sent via the [[EntityRef]] retrieved with [[ClusterSharding#entityRefFor[M](typeKey:org\.apache\.pekko\.cluster\.sharding\.typed\.scaladsl\.EntityTypeKey[M],entityId:String,dataCenter:org\.apache\.pekko\.cluster\.ClusterSettings\.DataCenter)* ClusterSharding#entityRefFor]],
  * which will also send via the local `ShardRegion`.
  *
  * Some settings can be configured as described in the `pekko.cluster.sharding`

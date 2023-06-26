@@ -220,7 +220,9 @@ trait TimerScheduler[T] {
     startTimerAtFixedRate(msg, msg, initialDelay, interval)
 
   /**
-   * Deprecated API: See [[TimerScheduler#startTimerWithFixedDelay]] or [[TimerScheduler#startTimerAtFixedRate]].
+   * Deprecated API: See
+   * [[TimerScheduler#startTimerWithFixedDelay(msg:T,initialDelay:scala\.concurrent\.duration\.FiniteDuration,delay:scala\.concurrent\.duration\.FiniteDuration)* TimerScheduler#startTimerWithFixedDelay]]
+   * or [[TimerScheduler#startTimerAtFixedRate(msg:T,initialDelay:scala\.concurrent\.duration\.FiniteDuration,interval:scala\.concurrent\.duration\.FiniteDuration)* TimerScheduler#startTimerAtFixedRate]].
    */
   @deprecated(
     "Use startTimerWithFixedDelay or startTimerAtFixedRate instead. This has the same semantics as " +

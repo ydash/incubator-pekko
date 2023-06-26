@@ -220,7 +220,9 @@ trait TimerScheduler[T] {
     startTimerAtFixedRate(msg, msg, initialDelay, interval)
 
   /**
-   * Deprecated API: See [[TimerScheduler#startTimerWithFixedDelay]] or [[TimerScheduler#startTimerAtFixedRate]].
+   * Deprecated API: See
+   * [[startTimerWithFixedDelay(key:Any,msg:T,initialDelay:java\.time\.Duration,delay:java\.time\.Duration)* TimerScheduler#startTimerWithFixedDelay]]
+   * or [[startTimerAtFixedRate(key:Any,msg:T,initialDelay:java\.time\.Duration,interval:java\.time\.Duration)* TimerScheduler#startTimerAtFixedRate]].
    */
   @deprecated(
     "Use startTimerWithFixedDelay or startTimerAtFixedRate instead. This has the same semantics as " +

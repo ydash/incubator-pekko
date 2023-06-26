@@ -547,7 +547,7 @@ abstract class ActorSystem extends ActorRefFactory with ClassicActorSystemProvid
   def logConfiguration(): Unit
 
   /**
-   * Construct a path below the application guardian to be used with [[ActorSystem#actorSelection]].
+   * Construct a path below the application guardian to be used with [[ActorSystem.actorSelection(path:org\.apache\.pekko\.actor\.ActorPath)* ActorSystem#actorSelection]].
    */
   def /(name: String): ActorPath
 
@@ -557,7 +557,7 @@ abstract class ActorSystem extends ActorRefFactory with ClassicActorSystemProvid
   def child(child: String): ActorPath = /(child)
 
   /**
-   * Construct a path below the application guardian to be used with [[ActorSystem#actorSelection]].
+   * Construct a path below the application guardian to be used with [[ActorSystem.actorSelection(path:org\.apache\.pekko\.actor\.ActorPath)* ActorSystem#actorSelection]].
    */
   def /(name: Iterable[String]): ActorPath
 
@@ -673,7 +673,7 @@ abstract class ActorSystem extends ActorRefFactory with ClassicActorSystemProvid
    * This will stop the guardian actor, which in turn
    * will recursively stop all its child actors, and finally the system guardian
    * (below which the logging actors reside) and then execute all registered
-   * termination handlers (see [[ActorSystem#registerOnTermination]]).
+   * termination handlers (see [[ActorSystem.registerOnTermination(code:Runnable)* ActorSystem#registerOnTermination]]).
    * Be careful to not schedule any operations on completion of the returned future
    * using the dispatcher of this actor system as it will have been shut down before the
    * future completes.
@@ -683,7 +683,7 @@ abstract class ActorSystem extends ActorRefFactory with ClassicActorSystemProvid
   /**
    * Returns a Future which will be completed after the ActorSystem has been terminated
    * and termination hooks have been executed. If you registered any callback with
-   * [[ActorSystem#registerOnTermination]], the returned Future from this method will not complete
+   * [[ActorSystem.registerOnTermination(code:Runnable)* ActorSystem#registerOnTermination]], the returned Future from this method will not complete
    * until all the registered callbacks are finished. Be careful to not schedule any operations,
    * such as `onComplete`, on the dispatchers (`ExecutionContext`) of this actor system as they
    * will have been shut down before this future completes.
@@ -693,7 +693,7 @@ abstract class ActorSystem extends ActorRefFactory with ClassicActorSystemProvid
   /**
    * Returns a CompletionStage which will be completed after the ActorSystem has been terminated
    * and termination hooks have been executed. If you registered any callback with
-   * [[ActorSystem#registerOnTermination]], the returned CompletionStage from this method will not complete
+   * [[ActorSystem.registerOnTermination(code:Runnable)* ActorSystem#registerOnTermination]], the returned CompletionStage from this method will not complete
    * until all the registered callbacks are finished. Be careful to not schedule any operations,
    * such as `thenRunAsync`, on the dispatchers (`Executor`) of this actor system as they
    * will have been shut down before this CompletionStage completes.

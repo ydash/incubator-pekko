@@ -714,7 +714,7 @@ trait FSM[S, D] extends Actor with Listeners with ActorLogging {
    *
    * An initial `currentState -> currentState` notification will be triggered by calling this method.
    *
-   * @see [[#startWith]]
+   * @see [[#startWith(stateName:S,stateData:D,timeout:FSM\.this\.Timeout)* #startWith]]
    */
   final def initialize(): Unit =
     if (currentState != null) makeTransition(currentState)

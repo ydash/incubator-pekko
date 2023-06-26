@@ -99,7 +99,7 @@ abstract class ActorSelection extends Serializable {
   def resolveOne(timeout: FiniteDuration): Future[ActorRef] = resolveOne()(timeout)
 
   /**
-   * Java API for [[#resolveOne]]
+   * Java API for [[#resolveOne(timeout:scala\.concurrent\.duration\.FiniteDuration)* resolveOne]]
    *
    * Resolve the [[ActorRef]] matching this selection.
    * The result is returned as a CompletionStage that is completed with the [[ActorRef]]
@@ -112,7 +112,7 @@ abstract class ActorSelection extends Serializable {
     FutureConverters.asJava[ActorRef](resolveOne(timeout))
 
   /**
-   * Java API for [[#resolveOne]]
+   * Java API for [[#resolveOne(timeout:scala\.concurrent\.duration\.FiniteDuration)* resolveOne]]
    *
    * Resolve the [[ActorRef]] matching this selection.
    * The result is returned as a CompletionStage that is completed with the [[ActorRef]]
@@ -124,7 +124,7 @@ abstract class ActorSelection extends Serializable {
   def resolveOneCS(timeout: java.time.Duration): CompletionStage[ActorRef] = resolveOne(timeout)
 
   /**
-   * Java API for [[#resolveOne]]
+   * Java API for [[#resolveOne(timeout:scala\.concurrent\.duration\.FiniteDuration)* resolveOne]]
    *
    * Resolve the [[ActorRef]] matching this selection.
    * The result is returned as a CompletionStage that is completed with the [[ActorRef]]
@@ -365,7 +365,7 @@ private[pekko] case object SelectParent extends SelectionPathElement {
 }
 
 /**
- * When [[ActorSelection#resolveOne]] can't identify the actor the
+ * When [[ActorSelection#resolveOne(timeout:java\.time\.Duration)* ActorSelection#resolveOne]] can't identify the actor the
  * `Future` is completed with this failure.
  */
 @SerialVersionUID(1L)

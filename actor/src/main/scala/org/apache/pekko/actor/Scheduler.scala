@@ -336,7 +336,8 @@ trait Scheduler {
   }
 
   /**
-   * Deprecated API: See [[Scheduler#scheduleWithFixedDelay]] or [[Scheduler#scheduleAtFixedRate]].
+   * Deprecated API: See [[#scheduleWithFixedDelay(initialDelay:scala\.concurrent\.duration\.FiniteDuration,delay:scala\.concurrent\.duration\.FiniteDuration,receiver:org\.apache\.pekko\.actor\.ActorRef,message:Any)* Scheduler#scheduleWithFixedDelay]]
+   * or [[#scheduleAtFixedRate(initialDelay:scala\.concurrent\.duration\.FiniteDuration,interval:scala\.concurrent\.duration\.FiniteDuration,receiver:org\.apache\.pekko\.actor\.ActorRef,message:Any)* Scheduler#scheduleAtFixedRate]].
    */
   @deprecated(
     "Use scheduleWithFixedDelay or scheduleAtFixedRate instead. This has the same semantics as " +
@@ -359,7 +360,8 @@ trait Scheduler {
       })
 
   /**
-   * Deprecated API: See [[Scheduler#scheduleWithFixedDelay]] or [[Scheduler#scheduleAtFixedRate]].
+   * Deprecated API: See [[#scheduleWithFixedDelay(initialDelay:java\.time\.Duration,delay:java\.time\.Duration,receiver* Scheduler#scheduleWithFixedDelay]]
+   * or [[#scheduleAtFixedRate(initialDelay:java\.time\.Duration,interval:java\.time\.Duration,receiver* Scheduler#scheduleAtFixedRate]].
    */
   @deprecated(
     "Use scheduleWithFixedDelay or scheduleAtFixedRate instead. This has the same semantics as " +
@@ -377,7 +379,8 @@ trait Scheduler {
   }
 
   /**
-   * Deprecated API: See [[Scheduler#scheduleWithFixedDelay]] or [[Scheduler#scheduleAtFixedRate]].
+   * Deprecated API: See [[#scheduleWithFixedDelay(initialDelay:scala\.concurrent\.duration\.FiniteDuration,delay:scala\.concurrent\.duration\.FiniteDuration)* Scheduler#scheduleWithFixedDelay]]
+   * or [[#scheduleAtFixedRate(initialDelay:scala\.concurrent\.duration\.FiniteDuration,interval:scala\.concurrent\.duration\.FiniteDuration)* Scheduler#scheduleAtFixedRate]].
    */
   @deprecated(
     "Use scheduleWithFixedDelay or scheduleAtFixedRate instead. This has the same semantics as " +
@@ -389,7 +392,8 @@ trait Scheduler {
     schedule(initialDelay, interval, new Runnable { override def run(): Unit = f })
 
   /**
-   * Deprecated API: See [[Scheduler#scheduleWithFixedDelay]] or [[Scheduler#scheduleAtFixedRate]].
+   * Deprecated API: See [[#scheduleWithFixedDelay(initialDelay:scala\.concurrent\.duration\.FiniteDuration,delay:scala\.concurrent\.duration\.FiniteDuration)* Scheduler#scheduleWithFixedDelay]]
+   * or [[#scheduleAtFixedRate(initialDelay:scala\.concurrent\.duration\.FiniteDuration,interval:scala\.concurrent\.duration\.FiniteDuration)* Scheduler#scheduleAtFixedRate]].
    */
   @deprecated(
     "Use scheduleWithFixedDelay or scheduleAtFixedRate instead. This has the same semantics as " +
@@ -399,7 +403,8 @@ trait Scheduler {
       implicit executor: ExecutionContext): Cancellable
 
   /**
-   * Deprecated API: See [[Scheduler#scheduleWithFixedDelay]] or [[Scheduler#scheduleAtFixedRate]].
+   * Deprecated API: See [[#scheduleWithFixedDelay(initialDelay:java\.time\.Duration,delay:java\.time\.Duration,runnable* Scheduler#scheduleWithFixedDelay]]
+   * or [[#scheduleAtFixedRate(initialDelay:java\.time\.Duration,interval:java\.time\.Duration,runnable* Scheduler#scheduleAtFixedRate]].
    */
   @deprecated(
     "Use scheduleWithFixedDelay or scheduleAtFixedRate instead. This has the same semantics as " +

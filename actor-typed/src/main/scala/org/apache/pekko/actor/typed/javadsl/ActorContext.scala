@@ -35,7 +35,8 @@ import pekko.pattern.StatusReply
  *  - designate the behavior for the next message
  *
  * In Pekko, the first capability is accessed by using the `tell` method
- * on an [[ActorRef]], the second is provided by [[ActorContext#spawn]]
+ * on an [[ActorRef]], the second is provided by
+ * [[[[ActorContext#spawn[U](behavior:org\.apache\.pekko\.actor\.typed\.Behavior[U],name:String,props:org\.apache\.pekko\.actor\.typed\.Props)* ActorContext#spawn]]]]
  * and the third is implicit in the signature of [[Behavior]] in that the next
  * behavior is always returned from the message processing logic.
  *
@@ -321,7 +322,9 @@ trait ActorContext[T] extends TypedActorContext[T] with ClassicActorContextProvi
   /**
    * The same as [[ask]] but only for requests that result in a response of type [[pekko.pattern.StatusReply]].
    * If the response is a [[pekko.pattern.StatusReply#success]] the returned future is completed successfully with the wrapped response.
-   * If the status response is a [[pekko.pattern.StatusReply#error]] the returned future will be failed with the
+   * If the status response is a
+   * [[pekko.pattern.StatusReply#error[T](exception:Throwable)* pekko.pattern.StatusReply#error]]
+   * the returned future will be failed with the
    * exception in the error (normally a [[pekko.pattern.StatusReply.ErrorMessage]]).
    */
   def askWithStatus[Req, Res](

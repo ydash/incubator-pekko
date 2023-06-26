@@ -289,7 +289,9 @@ abstract class AbstractActorWithTimers extends AbstractActor with Timers {
     startTimerAtFixedRate(key, msg, initialDelay.asScala, interval.asScala)
 
   /**
-   * Deprecated API: See [[TimerScheduler#startTimerWithFixedDelay]] or [[TimerScheduler#startTimerAtFixedRate]].
+   * Deprecated API: See
+   * [[TimerScheduler#startTimerWithFixedDelay(key:Any,msg:Any,initialDelay:scala\.concurrent\.duration\.FiniteDuration,delay:scala\.concurrent\.duration\.FiniteDuration)* TimerScheduler#startTimerWithFixedDelay]]
+   * or [[TimerScheduler#startTimerAtFixedRate(key:Any,msg:Any,initialDelay:scala\.concurrent\.duration\.FiniteDuration,interval:scala\.concurrent\.duration\.FiniteDuration)* TimerScheduler#startTimerAtFixedRate]].
    */
   @deprecated(
     "Use startTimerWithFixedDelay or startTimerAtFixedRate instead. This has the same semantics as " +
@@ -298,7 +300,9 @@ abstract class AbstractActorWithTimers extends AbstractActor with Timers {
   def startPeriodicTimer(key: Any, msg: Any, interval: FiniteDuration): Unit
 
   /**
-   * Deprecated API: See [[TimerScheduler#startTimerWithFixedDelay]] or [[TimerScheduler#startTimerAtFixedRate]].
+   * Deprecated API: See
+   * [[TimerScheduler#startTimerWithFixedDelay(key:Any,msg:Any,initialDelay:java\.time\.Duration,delay:java\.time\.Duration)* TimerScheduler#startTimerWithFixedDelay]]
+   * or [[TimerScheduler#startTimerAtFixedRate(key:Any,msg:Any,initialDelay:java\.time\.Duration,interval:java\.time\.Duration)* TimerScheduler#startTimerAtFixedRate]].
    */
   @deprecated(
     "Use startTimerWithFixedDelay or startTimerAtFixedRate instead. This has the same semantics as " +

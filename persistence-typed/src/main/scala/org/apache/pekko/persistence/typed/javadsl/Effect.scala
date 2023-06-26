@@ -42,7 +42,7 @@ import pekko.util.ccompat.JavaConverters._
 
   /**
    * Persist all of a the given events. Each event will be applied through `applyEffect` separately but not until
-   * all events has been persisted. If `callback` is added through [[EffectBuilder.thenRun]] that will invoked
+   * all events has been persisted. If `callback` is added through [[EffectBuilder.thenRun(callback* EffectBuilder.thenRun]] that will invoked
    * after all the events has been persisted.
    */
   final def persist(events: java.util.List[Event]): EffectBuilder[Event, State] = PersistAll(events.asScala.toVector)

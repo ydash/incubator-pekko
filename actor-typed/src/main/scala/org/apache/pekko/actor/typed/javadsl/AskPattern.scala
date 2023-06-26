@@ -54,7 +54,9 @@ object AskPattern {
   /**
    * The same as [[ask]] but only for requests that result in a response of type [[pekko.pattern.StatusReply]].
    * If the response is a [[pekko.pattern.StatusReply#success]] the returned future is completed successfully with the wrapped response.
-   * If the status response is a [[pekko.pattern.StatusReply#error]] the returned future will be failed with the
+   * If the status response is a
+   * [[pekko.pattern.StatusReply#error[T](exception:Throwable)* pekko.pattern.StatusReply#error]]
+   * the returned future will be failed with the
    * exception in the error (normally a [[pekko.pattern.StatusReply.ErrorMessage]]).
    */
   def askWithStatus[Req, Res](
