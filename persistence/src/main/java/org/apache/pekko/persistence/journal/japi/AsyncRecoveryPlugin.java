@@ -30,9 +30,8 @@ interface AsyncRecoveryPlugin {
    * <p>The `replayCallback` must also be called with messages that have been marked as deleted. In
    * this case a replayed message's `deleted` method must return `true`.
    *
-   * <p>The `toSequenceNr` is the lowest of what was returned by {@link
-   * #doAsyncReadHighestSequenceNr} and what the user specified as recovery {@link
-   * org.apache.pekko.persistence.Recovery} parameter.
+   * <p>The `toSequenceNr` is the lowest of what was returned by {@link #doAsyncReadHighestSequenceNr}
+   * and what the user specified as recovery {@link org.apache.pekko.persistence.Recovery} parameter.
    *
    * @param persistenceId id of the persistent actor.
    * @param fromSequenceNr sequence number where replay should start (inclusive).
